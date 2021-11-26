@@ -51,5 +51,28 @@ app.UseAuthorization();
 
 app.MapGet("/", () => "Hello World!");//.Produces<Scooter>().RequireAuthorization()//.AllowAnonymous();
 
+app.MapGet("/pins", () => new { id = 0 });
+
+app.MapGet("/pin-details", () => new { id = 0 });
+
+app.MapGet("/account", () => new { id = 0 });
+
+app.MapPost("/pin", (string coordinates, int userId) => {});
+
+app.MapPost("/login", (string username, int password) => {});
+
+app.MapPost("/register", (string username, int password) => {});
+
+app.MapPost("/comment", (string content) => {});
+
+app.MapPut("/pin", (string content) => {});
+
+app.MapPut("/account", (string content) => {});
+
+app.MapDelete("/pin", (int id) => {});
+
+app.MapDelete("/comment", (int id) => {});
+
+
 app.Run();
 
