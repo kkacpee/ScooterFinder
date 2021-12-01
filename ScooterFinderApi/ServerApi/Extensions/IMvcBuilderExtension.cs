@@ -11,7 +11,7 @@ namespace ServerApi.Extensions
             return builder
                 .AddFluentValidation(options =>
                 {
-                    options.RegisterValidatorsFromAssemblyContaining<ScooterValidator>();
+                    options.RegisterValidatorsFromAssemblyContaining<AddPinValidator>();
                     options.LocalizationEnabled = false;
                     options.DisableDataAnnotationsValidation = false;
                     options.ImplicitlyValidateChildProperties = true;

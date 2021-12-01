@@ -1,11 +1,13 @@
-using ServerApi.Persistance;
-using Microsoft.EntityFrameworkCore;
-using Npgsql.EntityFrameworkCore.PostgreSQL;
-using ServerApi.Persistance.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using FluentValidation.AspNetCore;
+using ServerApi.DTO;
+using ServerApi.DTO.Comment;
+using ServerApi.DTO.Pin;
+using ServerApi.Extensions;
+using ServerApi.Persistance;
+using ServerApi.Persistance.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,7 +32,7 @@ builder.Services.AddSwaggerGen(x =>
     });
 });
 
-builder.Services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Scooter>());
+builder.Services.AddControllers().AddAndConfigureFluentValidation();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
 builder.Services.AddAuthorization(options =>
@@ -51,19 +53,19 @@ app.UseAuthorization();
 
 app.MapGet("/", () => "Hello World!");//.Produces<Scooter>().RequireAuthorization()//.AllowAnonymous();
 
-app.MapGet("/pins", () => new { id = 0 });
+app.MapGet("/pins", () => new { id = 0 }).Produces<List<Pin>>();
 
-app.MapGet("/pin-details", () => new { id = 0 });
+app.MapGet("/pin-details", () => new { id = 0 }).Produces<Pin>();
 
-app.MapGet("/account", () => new { id = 0 });
+app.MapGet("/account", () => new { id = 0 }).Produces<User>();
 
-app.MapPost("/pin", (string coordinates, int userId) => {});
+app.MapPost("/pin", (AddPinRequest pin) => {});
 
-app.MapPost("/login", (string username, int password) => {});
+app.MapPost("/login", (LoginRequest login) => {});
 
-app.MapPost("/register", (string username, int password) => {});
+app.MapPost("/register", (LoginRequest register) => {});
 
-app.MapPost("/comment", (string content) => {});
+app.MapPost("/comment", (AddCommentRequest comment) => {});
 
 app.MapPut("/pin", (string content) => {});
 

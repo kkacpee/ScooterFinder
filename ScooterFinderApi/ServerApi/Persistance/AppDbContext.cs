@@ -10,6 +10,8 @@ namespace ServerApi.Persistance
 
         }
 
-        public DbSet<Scooter> Scooters { get; set; }
+        public DbSet<Pin> Pins { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Comment> Comments { get; set; }
     }
 }
