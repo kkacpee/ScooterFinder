@@ -1,6 +1,5 @@
 ﻿using ServerApi.Persistance;
 using ServerApi.Persistance.Models;
-using ServerApi.Repositories.Interfaces;
 
 namespace ServerApi.Repositories
 {
