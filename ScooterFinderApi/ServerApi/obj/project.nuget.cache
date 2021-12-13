@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "83iNtWb/FjDWXQTuRDGAkgRyr7zYKF9VQNI7PKuHfi8kTAXKuMU63ExJegDxm5J0OeTJ0xNE8+U6TPFa0lBBOg==",
+  "dgSpecHash": "T8GN3q9vCmNlpey1AU4gNTioC7fFH/BXHKEfsJOsAx4ivKgUjIb3K9IVzZTDCAhyAsrDkvr+WJKrIpnP0pWrhA==",
   "success": true,
   "projectFilePath": "D:\\Not-Dev\\TAI\\ScooterFinderApi\\ServerApi\\ServerApi.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "C:\\Users\\kopec\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.10.0\\microsoft.identitymodel.protocols.openidconnect.6.10.0.nupkg.sha512",
     "C:\\Users\\kopec\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.10.0\\microsoft.identitymodel.tokens.6.10.0.nupkg.sha512",
     "C:\\Users\\kopec\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\kopec\\.nuget\\packages\\netcore.autoregisterdi\\2.1.0\\netcore.autoregisterdi.2.1.0.nupkg.sha512",
     "C:\\Users\\kopec\\.nuget\\packages\\npgsql\\6.0.0\\npgsql.6.0.0.nupkg.sha512",
     "C:\\Users\\kopec\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\6.0.0\\npgsql.entityframeworkcore.postgresql.6.0.0.nupkg.sha512",
     "C:\\Users\\kopec\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",

@@ -15,7 +15,6 @@ D:\Not-Dev\TAI\ScooterFinderApi\ServerApi\bin\Debug\net6.0\Npgsql.EntityFramewor
 D:\Not-Dev\TAI\ScooterFinderApi\ServerApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\Not-Dev\TAI\ScooterFinderApi\ServerApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Not-Dev\TAI\ScooterFinderApi\ServerApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\Not-Dev\TAI\ScooterFinderApi\ServerApi\obj\Debug\net6.0\ServerApi.csproj.AssemblyReference.cache
 D:\Not-Dev\TAI\ScooterFinderApi\ServerApi\obj\Debug\net6.0\ServerApi.GeneratedMSBuildEditorConfig.editorconfig
 D:\Not-Dev\TAI\ScooterFinderApi\ServerApi\obj\Debug\net6.0\ServerApi.AssemblyInfoInputs.cache
 D:\Not-Dev\TAI\ScooterFinderApi\ServerApi\obj\Debug\net6.0\ServerApi.AssemblyInfo.cs
@@ -37,3 +36,8 @@ D:\Not-Dev\TAI\ScooterFinderApi\ServerApi\bin\Debug\net6.0\Microsoft.IdentityMod
 D:\Not-Dev\TAI\ScooterFinderApi\ServerApi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Not-Dev\TAI\ScooterFinderApi\ServerApi\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 D:\Not-Dev\TAI\ScooterFinderApi\ServerApi\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Not-Dev\TAI\ScooterFinderApi\ServerApi\bin\Debug\net6.0\FluentValidation.dll
+D:\Not-Dev\TAI\ScooterFinderApi\ServerApi\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+D:\Not-Dev\TAI\ScooterFinderApi\ServerApi\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\Not-Dev\TAI\ScooterFinderApi\ServerApi\obj\Debug\net6.0\ServerApi.csproj.AssemblyReference.cache
+D:\Not-Dev\TAI\ScooterFinderApi\ServerApi\bin\Debug\net6.0\NetCore.AutoRegisterDi.dll

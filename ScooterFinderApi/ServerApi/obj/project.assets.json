@@ -318,6 +318,18 @@
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
         }
       },
+      "NetCore.AutoRegisterDi/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/NetCore.AutoRegisterDi.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NetCore.AutoRegisterDi.dll": {}
+        }
+      },
       "Npgsql/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -1023,6 +1035,19 @@
         "microsoft.openapi.nuspec"
       ]
     },
+    "NetCore.AutoRegisterDi/2.1.0": {
+      "sha512": "loGy3NdGb0NT/ufvdFRRstQrtiEoA8XhD0iwrV/egRlB00v/t5wbty6sBgaTgEUsz5da2a/5yGRTxnrNpli9KQ==",
+      "type": "package",
+      "path": "netcore.autoregisterdi/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/NetCore.AutoRegisterDi.dll",
+        "lib/netstandard2.0/NetCore.AutoRegisterDi.xml",
+        "netcore.autoregisterdi.2.1.0.nupkg.sha512",
+        "netcore.autoregisterdi.nuspec"
+      ]
+    },
     "Npgsql/6.0.0": {
       "sha512": "8m2AXZgX7b/VYL6D7aQ1M/hu7vQ+QvVHxaHelriupN2hZqEhcwJkPiICLBVSX/+xm+iN8mZVEUvD7ujmgpTgLw==",
       "type": "package",
@@ -1302,6 +1327,7 @@
       "FluentValidation.AspNetCore >= 10.3.4",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.0",
+      "NetCore.AutoRegisterDi >= 2.1.0",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 6.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
@@ -1361,6 +1387,10 @@
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[6.0.0, )"
+          },
+          "NetCore.AutoRegisterDi": {
+            "target": "Package",
+            "version": "[2.1.0, )"
           },
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",
