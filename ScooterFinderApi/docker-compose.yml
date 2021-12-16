@@ -1,0 +1,30 @@
+version: '3'
+
+networks:
+    webapi-prod:
+        driver: bridge
+
+services:
+    webapi:
+        image: kkacpee/taiapi:latest
+        depends_on:
+            - "db"
+        ports:
+            - "3030:80"
+        networks:
+            - webapi-prod
+    
+    db:
+        image: postgres:latest
+        ports:
+            - "5432"
+        restart: always
+        command: postgres -c listen_addresses='*'
+        environment:
+            - POSTGRES_PASSWORD=admin
+            - POSTGRES_USER=postgres
+            - POSTGRES_DB=apidb
+        networks:
+            - webapi-prod
+
+        

@@ -19,7 +19,7 @@ namespace ServerApi.Services
             {
                 UserId = dto.UserId,
                 PinName = dto.PinName,
-                PinTypeId = (int)dto.PinType,
+                PinTypeId = dto.PinTypeId,
                 Coordinates = dto.Coordinates,
                 Description = dto.Description
             };

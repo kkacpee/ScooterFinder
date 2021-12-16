@@ -19,15 +19,7 @@ namespace ServerApi.Services
             _userRepository = userRepository;
         }
 
-        public User GetUser()
-        {
-            return new User
-            {
-                Id = 1,
-                PasswordHash = "dupa",
-                DisplayName = "dupaName"
-            };
-        }
+        public async Task<User> GetUser(int id, CancellationToken cancellationToken) => await _userRepository.GetSingleOrDefaultAsync(x => x.Id == id, x => x, cancellationToken);
 
         public async Task<IResult> Login(LoginRequest dto, IConfiguration configuration, CancellationToken cancellationToken)
         {
@@ -77,8 +69,8 @@ namespace ServerApi.Services
             var user = new User
             {
                 Email = dto.Email,
-                PasswordHash = passwordHash.ToString(),
-                PasswordSalt = passwordSalt.ToString(),
+                PasswordHash = Convert.ToBase64String(passwordHash),
+                PasswordSalt = Convert.ToBase64String(passwordSalt),
                 DisplayName = dto.DisplayName
             };
 
@@ -98,10 +90,11 @@ namespace ServerApi.Services
 
         private bool VerifyPassword(string password, string passwordHash, string passwordSalt)
         {
-            using (var hmac = new HMACSHA512(System.Text.Encoding.UTF8.GetBytes(passwordSalt)))
+            using (var hmac = new HMACSHA512(Convert.FromBase64String(passwordSalt)))
             {
                 var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
-                return computedHash.SequenceEqual(System.Text.Encoding.UTF8.GetBytes(passwordHash));
+                var pass = Convert.ToBase64String(computedHash);
+                return pass.Equals(passwordHash);
             }
         }
     }

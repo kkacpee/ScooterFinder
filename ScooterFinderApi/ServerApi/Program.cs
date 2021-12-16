@@ -82,7 +82,7 @@ app.MapGet("/pins", () => new { id = 0 }).Produces<List<Pin>>();
 
 app.MapGet("/pin-details", () => new { id = 0 }).Produces<Pin>();
 
-app.MapGet("/account", (IUserService service) => service.GetUser()).Produces<User>();
+app.MapGet("/account", (int id, IUserService service, CancellationToken cancellationToken) => service.GetUser(id, cancellationToken)).Produces<User>();
 
 app.MapPost("/pin", async (AddPinRequest pin, IPinService service, CancellationToken cancellationToken) => 
     await service.AddPinAsync(pin, cancellationToken));
