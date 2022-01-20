@@ -7,6 +7,7 @@ using NetCore.AutoRegisterDi;
 using ServerApi.DTO;
 using ServerApi.DTO.Comment;
 using ServerApi.DTO.Pin;
+using ServerApi.DTO.User;
 using ServerApi.Extensions;
 using ServerApi.Persistance;
 using ServerApi.Persistance.Models;
@@ -76,13 +77,16 @@ app.UseSwaggerUI();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapGet("/", () => "Hello World!");//.RequireAuthorization();//.Produces<Scooter>().RequireAuthorization()//.AllowAnonymous();
+app.MapGet("/", () => "Hello World!");
 
-app.MapGet("/pins", () => new { id = 0 }).Produces<List<Pin>>();
+app.MapGet("/pins", async (IPinService service, CancellationToken cancellationToken) => 
+    await service.GetPinsAsync(cancellationToken)).Produces<List<Pin>>();
 
-app.MapGet("/pin-details", () => new { id = 0 }).Produces<Pin>();
+app.MapGet("/pin-details", async (int id, IPinService service, CancellationToken cancellationToken) => 
+    await service.GetPinAsync(id, cancellationToken)).Produces<PinDetailsResponse>();
 
-app.MapGet("/account", (int id, IUserService service, CancellationToken cancellationToken) => service.GetUser(id, cancellationToken)).Produces<User>();
+app.MapGet("/account", async (int id, IUserService service, CancellationToken cancellationToken) => 
+    await service.GetUser(id, cancellationToken)).Produces<User>();
 
 app.MapPost("/pin", async (AddPinRequest pin, IPinService service, CancellationToken cancellationToken) => 
     await service.AddPinAsync(pin, cancellationToken));
@@ -93,16 +97,20 @@ app.MapPost("/login", async (LoginRequest login, IUserService service, Cancellat
 app.MapPost("/register", async (RegisterRequest register, IUserService service, CancellationToken cancellationToken) => 
     await service.Register(register, cancellationToken)).AllowAnonymous();
 
-app.MapPost("/comment", (AddCommentRequest comment) => {});
+app.MapPost("/comment", async (AddCommentRequest comment, ICommentService service, CancellationToken cancellationToken) => 
+    await service.AddCommentAsync(comment, cancellationToken));
 
-app.MapPut("/pin", (string content) => {});
+app.MapPut("/pin", async (EditPinRequest dto, IPinService service, CancellationToken cancellationToken) => 
+    await service.UpdatePinAsync(dto, cancellationToken));
 
-app.MapPut("/account", (string content) => {});
+app.MapPut("/account", async (EditUserRequest dto, IUserService service, CancellationToken cancellationToken) => 
+    await service.EditUserAsync(dto, cancellationToken));
 
 app.MapDelete("/pin", async (int id, IPinService service, CancellationToken cancellationToken) => 
-    service.DeletePinAsync(id, cancellationToken));
+    await service.DeletePinAsync(id, cancellationToken));
 
-app.MapDelete("/comment", (int id) => {});
+app.MapDelete("/comment", async (int id, ICommentService service, CancellationToken cancellationToken) => 
+    await service.DeleteCommentAsync(id, cancellationToken));
 
 app.Run();
 

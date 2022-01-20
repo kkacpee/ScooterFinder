@@ -7,6 +7,7 @@ using System;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
+using ServerApi.DTO.User;
 
 namespace ServerApi.Services
 {
@@ -76,6 +77,17 @@ namespace ServerApi.Services
 
             await _userRepository.AddAsync(user, cancellationToken);
 
+            return Results.Ok();
+        }
+
+        public async Task<IResult> EditUserAsync(EditUserRequest dto, CancellationToken cancellationToken)
+        {
+            var user = await _userRepository.GetByIdAsync(dto.UserId, cancellationToken);
+            if (user == null) return Results.NotFound();
+
+            user.DisplayName = dto.DisplayName;
+
+            await _userRepository.UpdateAsync(user, cancellationToken);
             return Results.Ok();
         }
 
