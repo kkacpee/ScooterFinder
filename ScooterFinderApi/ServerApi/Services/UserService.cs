@@ -38,7 +38,8 @@ namespace ServerApi.Services
 
             var claims = new[]
             {
-                new Claim(ClaimTypes.Name, dto.Email)
+                new Claim(ClaimTypes.Name, dto.Email),
+                new Claim("id", user.Id.ToString())
             };
 
             var token = new JwtSecurityToken

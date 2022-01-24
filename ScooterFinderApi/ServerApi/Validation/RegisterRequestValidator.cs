@@ -9,7 +9,7 @@ namespace ServerApi.Validation
         {
             RuleFor(x => x.Email).NotEmpty().EmailAddress();
             RuleFor(x => x.DisplayName).NotEmpty().MinimumLength(3).MaximumLength(256);
-            RuleFor(x => x.Password).NotEmpty().MaximumLength(256);
+            RuleFor(x => x.Password).NotEmpty().MinimumLength(6).MaximumLength(256);
         }
     }
 }
