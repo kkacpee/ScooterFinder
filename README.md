@@ -17,4 +17,4 @@ znajdując się w folderze zawierajacym plik docker-compose.yml.
 
 
 Aplikacja serwera tworzy REST API wystawiające poniższe endpointy:
-![alt text](https://github.com/kkacpee/ScooterFinder/[main]/swgr.png?raw=true)
+![alt text](https://github.com/kkacpee/ScooterFinder/blob/main/swgr.png?raw=true)
