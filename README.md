@@ -1,6 +1,12 @@
 # ScooterFinder
 Przed uruchomieniem aplikacji należy w pliku ScooterFinderApi/ServerApi/appsettings.json zmienić ConnectionString do bazy danych.
 
+Po zmianie ConnectionStringa, należy otworzyć solucję przy pomocy programu Visual Studio, a następnie przy pomocy narzędzia Package Manager Console wywołać komendę
+```
+update-database
+```
+w celu utwrzonia wymaganej struktury bazy danych.
+
 Do aplikacji ScooterFinder przygotowane zostały pliki Dockerfile oraz docker-compose.yml pozwalające na uruchomienie aplikacji w kontenrze.
 W celu zbudowania obrazu należy użyc komendy:
 ```
